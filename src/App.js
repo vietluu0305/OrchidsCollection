@@ -6,11 +6,11 @@ import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <div className="App">
-      <ThemeProvider>
+    <ThemeProvider>
+      <div className="App">
         <Orchids />
-      </ThemeProvider>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

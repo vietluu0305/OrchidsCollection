@@ -1,6 +1,12 @@
 import { Col, Card, Badge, Button } from 'react-bootstrap';
+import React from 'react';
 
 export default function OrchidCard({ orchid, onSelect }) {
+    //only call onSelect when the button is clicked, not when the card is rendered
+    const handleClick = React.useCallback(() => {
+        onSelect(orchid);
+    }, [onSelect, orchid]); 
+
     return (
         <Col>
             <Card className="h-100 shadow-sm border-0 position-relative">
@@ -20,7 +26,7 @@ export default function OrchidCard({ orchid, onSelect }) {
                     alt={orchid.name}
                     style={{
                         height: '200px',
-                        objectFit: 'cover'
+                        objectFit: 'cover'  //nen dua ra file css de style
                     }}
                 />
 
@@ -31,7 +37,7 @@ export default function OrchidCard({ orchid, onSelect }) {
                     </Card.Title>
 
                     <Card.Text className="small text-muted mb-2">
-                        <strong>Origin:</strong> {orchid.origin}
+                        <strong>Origin:</strong> {orchid.origin} 
                         <br />
                         <strong>Category:</strong> {orchid.category}
                     </Card.Text>
@@ -44,7 +50,7 @@ export default function OrchidCard({ orchid, onSelect }) {
 
                         <Button
                             variant="primary"
-                            onClick = {onSelect}
+                            onClick = {handleClick}
                         >
                             Details
                         </Button>

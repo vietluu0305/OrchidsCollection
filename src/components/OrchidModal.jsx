@@ -2,8 +2,7 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
 export default function OrchidModal({show, onHide, orchid}) {
-    if (!orchid) return null;
-
+    
     return (
         <Modal show={show} onHide={onHide} centered>
             <Modal.Header closeButton>
