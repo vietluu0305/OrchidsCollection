@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css'; // import bootstrap CSS to not break the styling of the app
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
